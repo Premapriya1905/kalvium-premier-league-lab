@@ -25,15 +25,16 @@ try {
 var formation = [4, 4, 3];
 
 function createFormation(formation){
-  let play={
-    defender:formation[0],
-    midfield:formation[1],
-    forward:formation[2]
-  }
-  return play;
 
-  if(formation.length==0){
-  return null;
+  if(formation.length===0){
+    return null;
+  }
+  else{
+    return {
+      defender:formation[0],
+      midfield:formation[1],
+      forward:formation[2]
+    }
   }
 }
   
@@ -91,8 +92,9 @@ function filterByAwardxTimes(awardName,noOfTimes){
 
 //Progression 7 - Filter players that won ______ award and belong to ______ country
 function filterByAwardxCountry(awardName,country){
-let awardsData=filterByAward(awardName);
-let data=awardsData.filter(player=>player.country==country );  
+  let awardsData=filterByAward(awardName);
+  let data=awardsData.filter(player=>player.country==country );  
+  return data;
 }
 
 //Progression 8 - Filter players that won atleast ______ awards, belong to ______ team and are younger than ____
